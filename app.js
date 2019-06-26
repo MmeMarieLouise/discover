@@ -20,4 +20,4 @@ app.use('/static', express.static('public'));
 //set up dev server using listen method
 // listening on port 3000
 app.listen(3000);
-console.log('Listening on port 3000');
+console.log('Starting server on port 3000');

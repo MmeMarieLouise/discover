@@ -1,3 +1,12 @@
+#### Intro
+
+This is a WIP project. It's an application that consumes the Google Books API and allows users to search for books
+
+Notes:
+
+- It's heavily commented, it's my style and helps to consolidate my learning 🤓
+
+
 ### Checklist
 
 - [x] create directory
@@ -16,10 +25,13 @@
 
 - [x] add function to retrieve results
 
-- [ ] make ajax request
+- [x] make ajax request
 
-- [ ] add loop to check through and  display results
+- [x] add loop to check through and  display results
+
+- [ ] deploy site
 
 - [ ] add styling
 
-- [ ] deploy site
+
+#### run using `node app.js`
