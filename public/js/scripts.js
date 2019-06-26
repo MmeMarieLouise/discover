@@ -1,22 +1,18 @@
 function bookSearch(){
     const find = document.getElementById('textName').value;
     document.getElementById('results').innerHTML = "";
-    console.log(find);
-}
-//ajax request, set up new object - should write in Jquery
-const xhr = new XMLHttpRequest();
-//callback
-xhr.onreadystatechange = function(){
-    if(xhr.readyState === 4){
-        document.getElementById('results').innerHTML = xhr.responseText;
-    }
-};
-const find = document.getElementById('textName').value;
-const bookData = 'https://www.googleapis.com/books/v1/volumes?q=';
-document.getElementById('results').innerHTML = "";
-xhr.open('GET',bookData + find);
-xhr.send();
 
-console.log('hello world');
+    $.ajax({
+        url: 'https://www.googleapis.com/books/v1/volumes?q=' + find,
+        dataType: 'json',
+        success: function(data){
+            for(i = 0; i < data.items.length; i++) {
+                results.innerHTML += "<h3>" + data.items[i].volumeInfo.title + "<h3>"
+                results.innerHTML += "<p>" + data.items[i].volumeInfo.description + "<p>"
+            }
+        },
+        type:'GET'
+    })
+}
 
 document.getElementById('search').addEventListener('submit', bookSearch, false);
