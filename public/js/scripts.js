@@ -22,7 +22,7 @@ function bookSearch(){
                 // publisher
                 results.innerHTML += "<p>Publisher: " + data.items[i].volumeInfo.publisher + "</p>"
                 // preview
-                results.innerHTML += "<a target=\"_blank\" rel=\"noopener noreferrer\" href =" +data.items[i].volumeInfo.previewLink + "> Check out a preview <a/>"
+                results.innerHTML += "<a target=\"_blank\" rel=\"noopener noreferrer\" href =" + data.items[i].volumeInfo.previewLink + "> Check out a preview <a/>"
             }
         },
         type:'GET'
