@@ -33,7 +33,7 @@ function bookSearch(){
                 if(data.items[i].volumeInfo.description) {
                     results.innerHTML += "<p>Synopsis: " + data.items[i].volumeInfo.description + "</p>"
                 } else {
-                    results.innerHTML +=  "<p>Synopsis: Sorry, this content is not available. Please check out the preview link .</p>"
+                    results.innerHTML +=  "<p>Synopsis: Sorry, this content is not available. Please check out the preview link below.</p>"
                 }
                 // publisher
                 if(data.items[i].volumeInfo.publisher) {
