@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Discover</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/grid.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
 </head>
 <body>
-
+<div class="grid">
+    <div class="item">
 <header>
-    <h1>Discover : Book portal </h1>
-    <p>Welcome to the book portal. There are millions of books to find !</p>
+    <h1>Discover Portal</h1>
+    <p>Welcome to the book portal </p>
+    <p>There are millions of books to find !!</p>
 </header>
+    </div>
+    <div class="item">
 <main>
     <form id="search" onsubmit="return false">
         <input type="search" id="textName" name="portal" oninvalid="this.setCustomValidity('Please enter a title of a book etc.')"
@@ -17,9 +23,12 @@
         <input type="submit" value="Search">
     </form>
 </main>
+    </div>
+    <div class="item">
 <div id="results">
     <img class="thumbnail">
 </div>
+    </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="/static/js/scripts.js"></script>

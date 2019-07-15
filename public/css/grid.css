@@ -1,0 +1,11 @@
+/* =====================================================================
+    Grid Layout
+ =========================================================================*/
+
+.grid {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(800px, 1fr))/*minmax(200px,1fr) 1fr  1fr  1fr*/;
+    grid-template-rows: repeat(auto-fit, minmax(100px, 1fr)) ;
+}
+
