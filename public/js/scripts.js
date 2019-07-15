@@ -12,17 +12,41 @@ function bookSearch(){
         success: function(data){
             for(i = 0; i < data.items.length; i++) {
                 // title
+                if(data.items[i].volumeInfo.title){
                 results.innerHTML += "<h3>" + data.items[i].volumeInfo.title + "</h3>"
+                }
+                    else { results.innerHTML += "<p>Title: Sorry, this content is not available. Please check out the preview link below.</p>"
+                }
                 // author
-                results.innerHTML += "<p>Author: " + data.items[i].volumeInfo.authors + "</p>"
+                if(data.items[i].volumeInfo.authors){
+                results.innerHTML += "<p>Author(s): " + data.items[i].volumeInfo.authors + "</p>"}
+                else{
+                    results.innerHTML += "<p>Author(s): Sorry, this content is not available. Please check out the preview link below.</p>"
+                }
                 // image
-                $("#results").append("<a href=\" \"><img id=\"each\" class=\"thumbnail\" src=" + data.items[i].volumeInfo.imageLinks.smallThumbnail + "></a>")
+                if( data.items[i].volumeInfo.imageLinks.smallThumbnail) {
+                    $("#results").append("<a href=\" \"><img id=\"each\" class=\"thumbnail\" src=" + data.items[i].volumeInfo.imageLinks.smallThumbnail + "></a>")
+                } else {
+                    results.innerHTML += "<p>Cover Image: Sorry, this content is not available. Please check out the preview link below.</p>"
+                }
                 // description
-                results.innerHTML += "<p>Synopsis: " + data.items[i].volumeInfo.description + "</p>"
+                if(data.items[i].volumeInfo.description) {
+                    results.innerHTML += "<p>Synopsis: " + data.items[i].volumeInfo.description + "</p>"
+                } else {
+                    results.innerHTML +=  "<p>Synopsis: Sorry, this content is not available. Please check out the preview link .</p>"
+                }
                 // publisher
-                results.innerHTML += "<p>Publisher: " + data.items[i].volumeInfo.publisher + "</p>"
+                if(data.items[i].volumeInfo.publisher) {
+                    results.innerHTML += "<p>Publisher: " + data.items[i].volumeInfo.publisher + "</p>"
+                } else {
+                    results.innerHTML +=  "<p>Publisher: Sorry, this content is not available. Please check out the preview link below.</p>"
+                }
                 // preview
-                results.innerHTML += "<a target=\"_blank\" rel=\"noopener noreferrer\" href =" + data.items[i].volumeInfo.previewLink + "> Check out a preview <a/>"
+                if(data.items[i].volumeInfo.previewLink) {
+                    results.innerHTML += "<a target=\"_blank\" rel=\"noopener noreferrer\" href =" + data.items[i].volumeInfo.previewLink + "> Check out a preview <a/>"
+                } else {
+                    results.innerHTML +=  "<p>Preview Link: Sorry, this content is not available. Please try again later.</p>"
+                }
             }
         },
         type:'GET'
