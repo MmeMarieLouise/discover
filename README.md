@@ -2,9 +2,17 @@
 
 This is a WIP project. It's an application that consumes the Google Books API and allows users to search for books
 
-Notes:
+This project can be accessed [here](https://dry-escarpment-35177.herokuapp.com/)
+
+##### Notes:
 
 - It's heavily commented, it's my style and helps to consolidate my learning 🤓
+
+##### To-do:
+
+- [ ] separate js into modules
+
+- [ ] modify code to ensure that it will scale without breaking
 
 
 ### Checklist
@@ -29,9 +37,21 @@ Notes:
 
 - [x] add loop to check through and  display results
 
-- [ ] deploy site
+- [x] display book author
 
-- [ ] add styling
+- [x] display book description
+
+- [x] display book publisher
+
+- [x] display book cover
+
+- [x] display book preview link
+
+- [ ] separate js into modules
+
+- [x] deploy site
+
+- [x] add styling
 
 
 #### run using `node app.js`
