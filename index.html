@@ -12,7 +12,8 @@
 </header>
 <main>
     <form id="search" onsubmit="return false">
-        <input type="text" id="textName" placeholder="search for books...">
+        <input type="search" id="textName" name="portal" oninvalid="this.setCustomValidity('Please enter a title of a book etc.')"
+        oninput="setCustomValidity('')" required placeholder="search for books..." minlength="2">
         <input type="submit" value="Search">
     </form>
 </main>
