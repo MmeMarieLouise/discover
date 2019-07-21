@@ -10,7 +10,11 @@ This project can be accessed [here](https://dry-escarpment-35177.herokuapp.com/)
 
 ##### To-do:
 
-- [ ] separate js into modules
+- [ ] install jest
+
+- [ ] write tests
+
+- [ ] break `bookSearch` function into multiple functions/ modules
 
 - [ ] modify code to ensure that it will scale without breaking
 
@@ -31,6 +35,10 @@ This project can be accessed [here](https://dry-escarpment-35177.herokuapp.com/)
 
 - [x] add HTML form
 
+- [ ] install jest
+
+- [ ] write tests
+
 - [x] add function to retrieve results
 
 - [x] make ajax request
@@ -47,7 +55,7 @@ This project can be accessed [here](https://dry-escarpment-35177.herokuapp.com/)
 
 - [x] display book preview link
 
-- [ ] separate js into modules
+- [ ] break `bookSearch` function into multiple functions/ modules
 
 - [x] deploy site
 
