@@ -10,7 +10,7 @@ This project can be accessed [here](https://dry-escarpment-35177.herokuapp.com/)
 
 ##### To-do:
 
-- [ ] install jest
+- [x] install jest
 
 - [ ] write tests
 
