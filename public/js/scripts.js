@@ -27,11 +27,11 @@ function successResult (data) {
     const markUp = data.items.map(function(book){
       return ` 
         <div>
-          ${printTitle(book.volumeInfo.title)}
-          ${printAuthor(book.volumeInfo.authors)}
+          ${getTitleMarkup(book.volumeInfo.title)}
+          ${getAuthorMarkup(book.volumeInfo.authors)}
           ${displayCover(book.volumeInfo.imageLinks.smallThumbnail)}
-          ${printSynopsis(book.volumeInfo.description)}
-          ${printPublisher(book.volumeInfo.publisher)}
+          ${getDescription(book.volumeInfo.description)}
+          ${getPublisher(book.volumeInfo.publisher)}
           ${linkPreview(book.volumeInfo.previewLink)}
         </div>
       `
@@ -40,7 +40,7 @@ function successResult (data) {
     results.innerHTML = markUp;
 }
 
-function printTitle(title) {
+function getTitleMarkup(title) {
   if (title) {
    return "<h3>" + title + "</h3>"
   }
@@ -49,7 +49,7 @@ function printTitle(title) {
   }
 }
 
-function printAuthor(authors) {
+function getAuthorMarkup(authors) {
    if (authors) {
   return "<p>Author(s): " + authors + "</p>"
    }
@@ -66,7 +66,7 @@ function displayCover(imageLinks) {
    }
 }
 
-function printSynopsis(description){
+function getDescription(description){
   if (description) {
    return "<p>Synopsis: " + description + "</p>"
   } else {
@@ -74,7 +74,7 @@ function printSynopsis(description){
  }
 }
 
-function printPublisher(publisher){
+function getPublisher(publisher){
   if (publisher) {
  return "<p>Publisher: " + publisher + "</p>"
   } else {
