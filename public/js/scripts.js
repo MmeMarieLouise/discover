@@ -12,22 +12,31 @@ const bookSearch = () => {
     //user input stored in var
     const find = document.getElementById('textName').value;
     document.getElementById('results').innerHTML = "";
-    asyncReq(find);
+    asyncReq(find).then((data) => successResult(data))
 }
+
 
 const asyncReq = (searchQuery) => {
-  $.ajax({
-    //properties - query + user input, data type, success, request type
-    url: 'https://www.googleapis.com/books/v1/volumes?q=' + searchQuery,
-    dataType: 'json',
-    success: ((data) => {
-      successResult(data);
-    }),
-    type: 'GET'
-  })
+    return new Promise (((resolve,reject) => {
+            const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function (){
+                if (xhr.readyState == 4) {
+                    if (xhr.status == 200) {
+                       resolve(xhr.responseText);
+                    } else {
+                        reject(httpRequest().then(data => successFunction(data)).catch(error => console.log(error)));
+                    }
+                }
+            };
+        xhr.open ('GET','https://www.googleapis.com/books/v1/volumes?q=' + searchQuery, true);
+        xhr.send();
+        }
+    ));
 }
 
-const successResult = (data) => {
+
+const successResult = (stringifiedData) => {
+    const data = JSON.parse(stringifiedData);
     const markUp = data.items.map((book) => {
       return ` 
         <div>
@@ -95,3 +104,10 @@ const linkPreview = (previewLink) => {
 }
 
 document.getElementById('search').addEventListener('submit', bookSearch);
+
+/*********************************************************************************************************************/
+/*
+* - AJAX or Asynchronous JavaScript And XML is the use of XMLHttpRequest object to communicate with servers  */
+
+
+/*********************************************************************************************************************/
