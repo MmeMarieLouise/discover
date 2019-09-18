@@ -16,7 +16,7 @@ This project can be accessed [here](https://dry-escarpment-35177.herokuapp.com/)
 
 - [x] break `bookSearch` function into multiple functions/ modules
 
-- [ ] modify code to ensure that it will scale without breaking
+- [x] modify code to ensure that it will scale without breaking
 
 
 ### Checklist
