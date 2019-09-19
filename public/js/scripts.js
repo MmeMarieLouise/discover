@@ -8,7 +8,7 @@ const bookSearch = () => {
     const find = document.getElementById('textName').value;
     // replace the value of div `results` and set it to empty string
     document.getElementById('results').innerHTML = "";
-    // to get value out from promise object, call Promise API methods (.then, .catch) on asynReq to consume the value of the fullfilled promise - .then()
+    // to get value out from promise object, call Promise API methods (.then, .catch) on asyncReq to consume the value of the fulfilled promise - .then()
     asyncReq(find).then((data) => successResult(data)).catch(error => console.log(error))
 }
 
