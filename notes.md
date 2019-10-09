@@ -29,11 +29,30 @@
 
 ## Setting up routes
 
-1. to create a route for the root, use the GET method (used to handle GET requests to a certain URL) on the app object,  first param is the location parameter, then as callback add require and request objects . the callback function runs when the client requests the route. The send method is called to send data to the client
+- to create a route for the root, use the GET method (used to handle GET requests to a certain URL) on the app object,  first param is the location parameter, then as callback add require and request objects . the callback function runs when the client requests the route. The send method is called to send data to the client
 ```
 app.get('/', (req, res)=> { 
-     response.send('test');
-
+     res.send('test');
 });
+
+app.listen(3000, () => {
+console.log('The application is running on localhost:3000!');
+});
+
+```
+
+- to add route that serves HTML
+
+```
+app.get('/',(req,res) => {
+res.sendFile('index.html', {root: __dirname})
+});
+
+```
+
+- to add static server for front end files
+
+```
+app.use('/static', express.static('public'));
 
 ```
